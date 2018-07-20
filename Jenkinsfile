@@ -36,8 +36,8 @@ node {
 
    stage('Deploy Spring Boot Application') {
 
-         //Remove maven-build-container if it exisits
-       //sh " docker rm -f java-deploy-container"
+       //Remove maven-build-container if it exisits
+       sh " docker rm -f akeeb-deploy-mscs"
 
        sh " docker run --name akeeb-deploy-mscs --volumes-from akeeb-build-mscs -d -p 8093:8083 akeeb/mscs"
    }
