@@ -16,16 +16,16 @@ node {
        // sh "sudo chown root:jenkins /run/docker.sock"
         sh " echo Current User is : $USER "
 	//docker.build("maven-build")
-	sh 'docker build -t "akeeb/MSCS" .'
+	sh 'docker build -t "akeeb/mscs" .'
    }
    
    stage('Run Maven Container') {
        
         //Remove maven-build-container if it exisits
-       // sh " docker rm -f maven-build-MSCS"
+       // sh " docker rm -f maven-build-mscs"
         
         //Run maven image
-        sh " docker run  --name akeeb-build-MSCS akeeb/MSCS"
+        sh " docker run  --name akeeb-build-mscs akeeb/mscs"
    }
    
    stage('Deploy Spring Boot Application') {
@@ -33,7 +33,7 @@ node {
          //Remove maven-build-container if it exisits
        //sh " docker rm -f java-deploy-container"
        
-       //sh " docker run --name akeeb-deploy-MSCS --volumes-from akeeb-build-MSCS -d -p 8092:8082 denisdbell/petclinic-deploy"
+       //sh " docker run --name akeeb-deploy-mscs --volumes-from akeeb-build-mscs -d -p 8092:8082 denisdbell/petclinic-deploy"
    }
 
 }
