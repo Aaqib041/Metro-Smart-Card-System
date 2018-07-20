@@ -39,7 +39,7 @@ node {
          //Remove maven-build-container if it exisits
        //sh " docker rm -f java-deploy-container"
 
-       sh " docker run --name akeeb-deploy-mscs --volumes-from akeeb-build-mscs -d -p 8092:8083 akeeb/mscs"
+       sh " docker run --name akeeb-deploy-mscs --volumes-from akeeb-build-mscs -d -p 8093:8083 akeeb/mscs"
    }
 
 }
