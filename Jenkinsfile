@@ -22,7 +22,7 @@ node {
    stage('Run Maven Container') {
 
         //Remove maven-build-container if it exisits
-        sh " docker rm -f akeeb-build-mscs"
+        //sh " docker rm -f akeeb-build-mscs"
 
         //Run maven image
         sh " docker run  --name akeeb-build-mscs akeeb/mscs"
@@ -37,7 +37,7 @@ node {
    stage('Deploy Spring Boot Application') {
 
        //Remove maven-build-container if it exisits
-       sh " docker rm -f akeeb-deploy-mscs"
+       //sh " docker rm -f akeeb-deploy-mscs"
 
        sh " docker run --name akeeb-deploy-mscs --volumes-from akeeb-build-mscs -d -p 8093:8083 akeeb/mscs"
    }
