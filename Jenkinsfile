@@ -29,7 +29,7 @@ node {
    }
 
    stage('Publish Docker Image') {
-        withDockerRegistry([ credentialsId: "a6944791-4326-4bd5-bd89-6a8836381124", url: "" ]) {
+        withDockerRegistry([ credentialsId: "483dee4b-c04e-4e73-9ff8-e750667474c4", url: "" ]) {
           sh 'docker push akeeb/mscs:latest'
         }
     }
