@@ -22,7 +22,7 @@ node {
    stage('Run Maven Container') {
 
         //Remove maven-build-container if it exisits
-        //sh " docker rm -f akeeb-build-mscs"
+        sh " docker rm -f akeeb-build-mscs"
 
         //Run maven image
         sh " docker run  --name akeeb-build-mscs akeeb/mscs"
