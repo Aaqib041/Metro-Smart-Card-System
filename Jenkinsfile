@@ -9,7 +9,10 @@ node {
 	//Testing tool installation and setup
 	//sh "oc version"
     sh "java -version"
-    sh "mvn --version"
+    //sh "mvn --version"
     sh "git --version"
+   }
+   stage('Build Maven project'){
+       sh "mvn clean install"
    }
 }
