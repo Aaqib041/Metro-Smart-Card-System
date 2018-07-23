@@ -7,7 +7,7 @@ node {
    }
    stage('Check Installations'){
 	//Testing tool installation and setup
-	sh "oc version"
+	//sh "oc version"
     sh "java -version"
     sh "mvn --version"
     sh "git --version"
