@@ -11,6 +11,7 @@ node {
     sh "java -version"
     //sh "mvn --version"
     sh "git --version"
+    sh "docker --version"
    }
    stage('Build Maven project'){
        sh "mvn clean install"
