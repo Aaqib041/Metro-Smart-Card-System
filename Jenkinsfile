@@ -14,6 +14,11 @@ node {
     sh "docker --version"
    }
    stage('Build Maven project'){
-       sh "mvn clean install"
+       //sh "mvn clean install"
+       sh " echo Building Docker File "
+       // sh "sudo chown root:jenkins /run/docker.sock"
+        sh " echo Current User is : $USER "
+	//docker.build("maven-build")
+	    sh 'docker build -t "akeeb/mscs" -f Dockerfile.build .'
    }
 }
