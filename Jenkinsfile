@@ -12,5 +12,11 @@ pipeline {
                 sh 'docker --version'
             }
         }
+
+        stage('Build Maven Package'){
+            steps{
+                sh 'mvn clean package'
+            }
+        }
     }
 }
