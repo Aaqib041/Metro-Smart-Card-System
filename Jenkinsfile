@@ -18,5 +18,11 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+
+        stage('Build Tomcat Image'){
+            steps{
+                sh 'docker build -f Dockerfile -t akeeb/tomcat:8 .'
+            }
+        }
     }
 }
