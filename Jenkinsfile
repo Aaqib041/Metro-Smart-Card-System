@@ -12,17 +12,18 @@ pipeline {
                 sh 'docker --version'
             }
         }
-
+        stage('Build Tomcat Image'){
+            steps{
+                sh 'pwd'
+                sh 'echo Workspace : $WORKSPACE'
+                sh 'docker build -f Dockerfile -t akeeb/tomcat:8 .'
+            }
+        }
         stage('Build Maven Package'){
             steps{
                 sh 'mvn clean package'
             }
         }
 
-        stage('Build Tomcat Image'){
-            steps{
-                sh 'docker build -f Dockerfile -t akeeb/tomcat:8 .'
-            }
-        }
     }
 }
