@@ -16,7 +16,7 @@ pipeline {
             steps{
                 sshagent(['ec2-credential']) {
                 // some block
-                sh 'scp -o StrictHostKeyChecking=no target/*.jar ec2-user@172.31.47.81:/tmp'
+                sh 'scp -o StrictHostKeyChecking=no target/*.jar ubuntu@ec2-18-220-124-39.us-east-2.compute.amazonaws.com:~/tmp'
                 sh 'hostname'
                 sh 'pwd'
                 sh 'whoami'
