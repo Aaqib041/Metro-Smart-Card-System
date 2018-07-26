@@ -24,6 +24,11 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+        stage('Run App Container'){
+            steps{
+                sh 'docker run --name akeeb-deploy-container -d -p 8092:8092 akeeb/deploy_mscs:8'
+            }
+        }
 
     }
 }
