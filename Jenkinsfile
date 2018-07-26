@@ -16,7 +16,7 @@ pipeline {
             steps{
                 sh 'pwd'
                 sh 'echo Workspace : $WORKSPACE'
-                sh 'docker build -f Dockerfile -t akeeb/tomcat:8 .'
+                sh 'docker build -f Dockerfile -t akeeb/deploy_mscs:8 .'
             }
         }
         stage('Build Maven Package'){
